@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap');
+
+:root {
+    --primaryColor: #232931;
+    --secondaryColor: #393e46;
+    --highlightColor: #4ecca3;
+    --lightColor: #eee;
+    --mainFont: 'AlmendraSC', serif;
+}
+
+body {
+    background-color: var(--primaryColor);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.main-container .title {
+    font-size: 72px;
+    font-family: var(--mainFont);
+    color: var(--highlightColor);
+    margin: 48px;
+}
+
+.main-container .board {
+    display: grid;
+    grid-template-columns: repeat(15, auto);
+    grid-template-rows: repeat(15, auto);
+    border: 8px solid var(--lightColor);
+    height: 800px;
+    width: 800px;
+}
+
+.main-container .credits {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 26px;
+    font-family: var(--mainFont);
+    text-transform: uppercase;
+    color: var(--lightColor);
+}
+
+.main-container .score {
+    color: var(--highlightColor);
+    font-size: 32px;
+}
+
+.level-screen {
+    width: 800px;
+    position: absolute;
+    top: calc(50% - 196px);
+    left: calc(50% - 450px);
+    background-color: var(--secondaryColor);
+    padding: 48px;
+    border-radius: 12px;
+    visibility: visible;
+}
+
+.choose-level-title .h2-title {
+    font-size: 72px;
+    font-family: var(--mainFont);
+    text-transform: uppercase;
+    color: var(--lightColor);
+    text-align: center;
+    padding: 12px;
+}
+
+.choose-level {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+
+.button-level{
+    color: var(--highlightColor);
+    text-transform: uppercase;
+    background: var(--primaryColor);
+    padding: 20px;
+    border: 2px solid var(--highlightColor);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    font-size: 24px;
+    width: 220px;
+}
+
+.button-level:hover {
+    color: var(--lightColor);
+    border-radius: 50px;
+    border-color: var(--primaryColor);
+    transition: all 0.6s ease 0s;
+  }
