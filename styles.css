@@ -20,8 +20,8 @@ body {
     position: relative;
     top: 0;
     left: 0;
-    height: 100%;
     opacity: 0.1;
+    max-height: 100vh;
 }
 
 .main-container .title {
@@ -36,7 +36,7 @@ body {
     grid-template-columns: repeat(15, auto);
     grid-template-rows: repeat(15, auto);
     border: 8px solid var(--lightColor);
-    height: 800px;
+    height: 500px;
     width: 800px;
 }
 
@@ -44,16 +44,76 @@ body {
     width: 600px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     font-size: 26px;
     font-family: var(--mainFont);
     text-transform: uppercase;
     color: var(--lightColor);
 }
 
-.main-container .score {
+.main-container .score, .choosen-nickname {
     color: var(--highlightColor);
     font-size: 32px;
+}
+
+.nickname-screen {
+    width: 800px;
+    position: absolute;
+    top: calc(50% - 196px);
+    left: calc(50% - 450px);
+    background-color: var(--secondaryColor);
+    padding: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.nickname-screen .h2-title {
+    font-size: 54px;
+}
+
+.nickname-screen .input-text {
+    background-color: var(--secondaryColor);
+    color: var(--lightColor);
+    outline: none;
+    overflow: hidden;
+    border: none;
+    border-bottom: 2px var(--highlightColor) solid;
+    font-size: 32px;
+}
+
+.nickname-screen .button {
+    margin-top: 22px;
+    padding: 12px;
+    width: 250px;
+}
+
+.snake-color {
+    width: 800px;
+    position: absolute;
+    top: calc(50% - 196px);
+    left: calc(50% - 450px);
+    background-color: var(--secondaryColor);
+    padding: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.snake-color .h2-title {
+    font-size: 44px;
+}
+
+.snake-color .button {
+    margin-top: 22px;
 }
 
 .level-screen {
@@ -64,10 +124,10 @@ body {
     background-color: var(--secondaryColor);
     padding: 48px;
     border-radius: 12px;
-    visibility: visible;
+    visibility: hidden;
 }
 
-.choose-level-title .h2-title {
+.h2-title {
     font-size: 72px;
     font-family: var(--mainFont);
     text-transform: uppercase;
@@ -82,7 +142,7 @@ body {
     justify-content: space-evenly; 
 }
 
-.button-level{
+.button{
     color: var(--highlightColor);
     text-transform: uppercase;
     background: var(--primaryColor);
@@ -95,9 +155,60 @@ body {
     width: 220px;
 }
 
-.button-level:hover {
+.button:hover {
     color: var(--lightColor);
     border-radius: 50px;
     border-color: var(--primaryColor);
     transition: all 0.6s ease 0s;
-  }
+    cursor: pointer;
+}
+
+.menu-container {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    visibility: hidden;
+}
+
+.menu-container .button {
+    width: 150px;
+    font-size: 18px;
+    padding: 12px;
+}
+
+.endgame-screen {
+    width: 800px;
+    position: absolute;
+    top: calc(50% - 380px);
+    left: calc(50% - 450px);
+    background-color: var(--secondaryColor);
+    padding: 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.endgame-screen .h2-title {
+    font-size: 62px;
+    margin-bottom: 12px;
+}
+
+.ranking {
+    width: 600px;
+    font-size: 22px;
+    color: var(--lightColor);
+    background-color: var(--primaryColor);
+    border-radius: 12px;
+}
+
+.ranking li {
+    padding: 4px;
+    margin: 8px;
+}
+
+.ranking li:hover {
+    border-bottom: 1px var(--highlightColor) solid;
+}
