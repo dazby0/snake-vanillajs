@@ -22,20 +22,43 @@ const message = document.getElementById('choosen-level');
 const menuBtn = document.querySelector('.menu-container');
 const endGameScreen = document.querySelector('.endgame-screen')
 
+const rankNicknamesArr = [];
+const rankNicknames = document.querySelectorAll('li')
+
+// console.log(rankNicknames)
+
+rankNicknames.forEach(rankNickname => {
+    rankNicknamesArr.push(rankNickname.innerHTML)
+});
+
+function matchItem(nickname) {
+    const isMatched = rankNicknamesArr.findIndex(el => el === nickname)
+    // console.log(isMatched)
+
+    if(isMatched !== -1) {
+        const matchedItem = rankNicknames[isMatched]
+        // console.log(matchedItem)
+        matchedItem.className = 'active-nick'
+    }
+}
+
 btnNickname.addEventListener('click', () => {
     const nickname = nicknameInput.value;
+    
     if (nickname !== '') {
-        nicknameScreen.style.visibility = 'hidden';
-        snakeColorScreen.style.visibility = 'visible';
+        nicknameScreen.style.display = 'none';
+        snakeColorScreen.style.display = 'flex';
         nicknameField.innerHTML = nickname;
+
+        matchItem(nickname)
     }
 })
 
 btnPicker.addEventListener('click', () => {
     const colorPicked = pickerValue.value;
     // console.log(colorPicked)
-    snakeColorScreen.style.visibility = 'hidden'
-    screenLevel.style.visibility = 'visible'
+    snakeColorScreen.style.display = 'none'
+    screenLevel.style.display = 'block'
 })
 
 btnEasy.addEventListener('click', () => {
@@ -57,18 +80,31 @@ btnHard.addEventListener('click', () => {
 })
 
 menuBtn.addEventListener('click', () => {
-    nicknameScreen.style.visibility = 'visible';
-    menuBtn.style.visibility = 'hidden';
+    nicknameScreen.style.display = 'flex';
+    menuBtn.style.display = 'none';
     mainContainer.style.opacity = 0.1;
 })
 
 function disappear() {
-    screenLevel.style.visibility = 'hidden';
-    menuBtn.style.visibility = 'visible';
+    screenLevel.style.display = 'none';
+    menuBtn.style.display = 'flex';
     mainContainer.style.opacity = 1;
 }
 
 btnTryAgain.addEventListener('click', () => {
-    endGameScreen.style.visibility = 'hidden'
-    nicknameScreen.style.visibility = 'visible'
+    endGameScreen.style.display = 'none'
+    nicknameScreen.style.display = 'flex'
 })
+
+// setTimeout(() => {
+//     endGameScreen.style.display = 'flex'
+
+//     const activeNick = document.querySelector('.active-nick')
+//     console.log(activeNick)
+
+//     activeNick.addEventListener('click', () => {
+//         endGameScreen.style.display = 'none'
+//         mainContainer.style.opacity = 0.1;
+//         nicknameScreen.style.display = 'flex'
+//     })
+// }, 5000)

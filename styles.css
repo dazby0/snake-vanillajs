@@ -69,7 +69,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
+    visibility: visible;
 }
 
 .nickname-screen .h2-title {
@@ -185,7 +185,7 @@ body {
     padding: 48px;
     border-radius: 12px;
     overflow: hidden;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -210,5 +210,15 @@ body {
 }
 
 .ranking li:hover {
-    border-bottom: 1px var(--highlightColor) solid;
+    color: var(--highlightColor);
+}
+
+.active-nick {
+    background-image: url('icons/edit.png');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.active-nick:hover {
+    cursor: pointer;
 }
