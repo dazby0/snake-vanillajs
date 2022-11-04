@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNAKE - THE GAME</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="title">SNAKE - THE GAME</div> 
+        <div class="board"></div>  
+        <div class="credits">
+            <p class="choosen-level" id="choosen-level"></p>
+            <p class="score">Score: 232</p>
+        </div> 
+    </div>
+
+    <div class="level-screen">
+        <div class="choose-level-title">
+            <h2 class="h2-title">Choose level</h2>
+        </div>
+        <div class="choose-level">
+            <button name='lvlValue' value='easy' class="button level-easy">EASY</button>
+            <button name='lvlValue' value='medium' class="button level-medium">MEDIUM</button>
+            <button name='lvlValue' value='hard' class="button level-hard">TURBO HARD</button>
+        </div>
+    </div>
+    
+    <div class="snake-color">
+        <div class="snake-color-title">
+            <h2 class="h2-title">Pick color of your snake</h2>
+        </div>
+        <input type="color" class="picker" id="inputPicker" />
+        <input type="button" value="NEXT" class="button" id="button-picker"></input>
+    </div>
+    
+    <div class="menu-container">
+        <input type="button" value="MENU" class="button">
+    </div>
+    
+    <!-- update jesli wczesnije wybrany nick juz jest w bazie -->
+    
+    
+    <div class="endgame-screen">
+        <div class="endgame-title">
+            <h2 class="h2-title">Game over!</h2>
+        </div>   
+        
+        <div class="score">
+            <h3 class="your-score">You scored: <span class="highlight">1234</span></h3>
+        </div>
+        
+        <div class="save-score">
+            <h4 class="save-score-title">Save your score?</h4>
+            <div class="save-score-buttons">
+                <input type="button" class="button save-yes" value="YES">
+                <input type="button" class="button save-no" value="NO">
+            </div>
+        </div>     
+    </div>
+
+    <form action="rank.html" target="_blank">
+        <div class="nickname-screen">
+            <h2 class="h2-title">Choose your nickname</h2>
+            <input type="text" name="nickname" id="nickname" class="input-text" id="nickname">
+            <input type="submit" value="SHOW RANK" class="button" id="button-nickname"></input>
+        </div>
+    </form>
+    <!-- <input type="button" value="TRY AGAIN?" class="button button-try-again"> -->
+    
+    
+
+    <script src="main.js" defer></script>
+    <!-- <iframe name="frame"></iframe> -->
+</body>
+</html>

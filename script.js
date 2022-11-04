@@ -1,35 +1,21 @@
-const btnNickname = document.getElementById('button-nickname');
-const nicknameInput = document.getElementById('nickname');
+const url = document.URL
+const nickname = url.slice(url.indexOf("=")+1) 
 // console.log(nickname)
-
-const btnPicker = document.getElementById('button-picker');
-const pickerValue = document.getElementById('inputPicker');
-
-const btnEasy = document.querySelector('.level-easy');
-const btnMedium = document.querySelector('.level-medium');
-const btnHard = document.querySelector('.level-hard');
-let choosenLevel = '';
-
-const nicknameField = document.querySelector('.choosen-nickname');
-
-const btnTryAgain = document.querySelector('.button-try-again');
-
-const nicknameScreen = document.querySelector('.nickname-screen');
-const snakeColorScreen = document.querySelector('.snake-color');
-const screenLevel = document.querySelector('.level-screen');
-const mainContainer = document.querySelector('.main-container');
-const message = document.getElementById('choosen-level');
-const menuBtn = document.querySelector('.menu-container');
-const endGameScreen = document.querySelector('.endgame-screen')
 
 const rankNicknamesArr = [];
 const rankNicknames = document.querySelectorAll('li')
-
 // console.log(rankNicknames)
+
+const nicknameScreen = document.querySelector('.nickname-screen');
+const nicknameInput = document.getElementById('nickname');
+const btnNickname = document.getElementById('button-nickname');
+const mainContainer = document.querySelector('.main')
 
 rankNicknames.forEach(rankNickname => {
     rankNicknamesArr.push(rankNickname.innerHTML)
 });
+// console.log(rankNicknamesArr)
+
 
 function matchItem(nickname) {
     const isMatched = rankNicknamesArr.findIndex(el => el === nickname)
@@ -41,70 +27,22 @@ function matchItem(nickname) {
         matchedItem.className = 'active-nick'
     }
 }
+matchItem(nickname)
+
+
+const matchedItem = document.querySelector('.active-nick')
+matchedItem.addEventListener('click', () => {
+    nicknameScreen.style.display = 'flex'
+    mainContainer.style.opacity = 0.1
+})
 
 btnNickname.addEventListener('click', () => {
-    const nickname = nicknameInput.value;
+    const updatedNickname = nicknameInput.value;
     
-    if (nickname !== '') {
+    if (updatedNickname !== '') {
         nicknameScreen.style.display = 'none';
-        snakeColorScreen.style.display = 'flex';
-        nicknameField.innerHTML = nickname;
+        // nicknameField.innerHTML = nickname;
 
-        matchItem(nickname)
+        //DODAC UPDATE NICKU
     }
 })
-
-btnPicker.addEventListener('click', () => {
-    const colorPicked = pickerValue.value;
-    // console.log(colorPicked)
-    snakeColorScreen.style.display = 'none'
-    screenLevel.style.display = 'block'
-})
-
-btnEasy.addEventListener('click', () => {
-    disappear();
-    choosenLevel = 'easy';
-    message.innerHTML = "Level: easy";
-})
-
-btnMedium.addEventListener('click', () => {
-    disappear();
-    choosenLevel = 'medium';
-    message.innerHTML = "Level: medium";
-})
-
-btnHard.addEventListener('click', () => {
-    disappear();
-    choosenLevel = 'hard';
-    message.innerHTML = "Level: hard";
-})
-
-menuBtn.addEventListener('click', () => {
-    nicknameScreen.style.display = 'flex';
-    menuBtn.style.display = 'none';
-    mainContainer.style.opacity = 0.1;
-})
-
-function disappear() {
-    screenLevel.style.display = 'none';
-    menuBtn.style.display = 'flex';
-    mainContainer.style.opacity = 1;
-}
-
-btnTryAgain.addEventListener('click', () => {
-    endGameScreen.style.display = 'none'
-    nicknameScreen.style.display = 'flex'
-})
-
-// setTimeout(() => {
-//     endGameScreen.style.display = 'flex'
-
-//     const activeNick = document.querySelector('.active-nick')
-//     console.log(activeNick)
-
-//     activeNick.addEventListener('click', () => {
-//         endGameScreen.style.display = 'none'
-//         mainContainer.style.opacity = 0.1;
-//         nicknameScreen.style.display = 'flex'
-//     })
-// }, 5000)

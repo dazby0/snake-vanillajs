@@ -65,11 +65,10 @@ body {
     padding: 48px;
     border-radius: 12px;
     overflow: hidden;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    visibility: visible;
 }
 
 .nickname-screen .h2-title {
@@ -101,11 +100,10 @@ body {
     padding: 48px;
     border-radius: 12px;
     overflow: hidden;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
 }
 
 .snake-color .h2-title {
@@ -124,7 +122,7 @@ body {
     background-color: var(--secondaryColor);
     padding: 48px;
     border-radius: 12px;
-    visibility: hidden;
+    display: none;
 }
 
 .h2-title {
@@ -167,7 +165,7 @@ body {
     position: fixed;
     top: 15px;
     left: 15px;
-    visibility: hidden;
+    display: none;
 }
 
 .menu-container .button {
@@ -178,14 +176,14 @@ body {
 
 .endgame-screen {
     width: 800px;
-    position: absolute;
-    top: calc(50% - 380px);
+    position: fixed;
+    top: calc(50% - 310px);
     left: calc(50% - 450px);
     background-color: var(--secondaryColor);
     padding: 48px;
     border-radius: 12px;
     overflow: hidden;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -193,14 +191,69 @@ body {
 
 .endgame-screen .h2-title {
     font-size: 62px;
-    margin-bottom: 12px;
+    color: var(--highlightColor);
+    /* margin-bottom: 12px; */
+}
+
+.your-score {
+    font-size: 38px;
+    color: var(--lightColor);
+    text-transform: uppercase;
+}
+
+.your-score .highlight {
+    color: var(--highlightColor);
+}
+
+.save-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.save-score-title {
+    font-size: 36px;
+    color: var(--lightColor);
+    text-transform: uppercase;
+}
+
+.save-score-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.save-score-buttons .button {
+    width: 140px;
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 72px;
+    font-style: var(--mainFont);
+    text-transform: uppercase;
+    color: var(--highlightColor);
+}
+
+.rank {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .ranking {
     width: 600px;
     font-size: 22px;
     color: var(--lightColor);
-    background-color: var(--primaryColor);
+    background-color: var(--secondaryColor);
     border-radius: 12px;
 }
 
@@ -221,4 +274,8 @@ body {
 
 .active-nick:hover {
     cursor: pointer;
+}
+
+iframe {
+    display: none;
 }
