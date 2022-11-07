@@ -1,3 +1,7 @@
+<!-- <?php
+    require('config.php');
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +16,10 @@
 <body>
     <div class="main-container">
         <div class="title">SNAKE - THE GAME</div> 
-        <div class="board"></div>  
+        <canvas class="board" width="400" height="400"></canvas>  
         <div class="credits">
-            <p class="choosen-level" id="choosen-level"></p>
-            <p class="score">Score: 232</p>
+            <p class="choosen-level" id="choosen-level">Level:</p>
+            <p class="score"></p>
         </div> 
     </div>
 
@@ -51,7 +55,7 @@
         </div>   
         
         <div class="score">
-            <h3 class="your-score">You scored: <span class="highlight">1234</span></h3>
+            <h3 class="your-score">You scored: <span class="highlight"></span></h3>
         </div>
         
         <div class="save-score">
@@ -63,18 +67,25 @@
         </div>     
     </div>
 
-    <form action="rank.html" target="_blank">
+    <form action="rank.php" target="_blank" method='get'>
         <div class="nickname-screen">
             <h2 class="h2-title">Choose your nickname</h2>
             <input type="text" name="nickname" id="nickname" class="input-text" id="nickname">
             <input type="submit" value="SHOW RANK" class="button" id="button-nickname"></input>
         </div>
     </form>
-    <!-- <input type="button" value="TRY AGAIN?" class="button button-try-again"> -->
     
-    
+    <!-- <?php
+        $nickname = $_GET['nickname'];
 
-    <script src="main.js" defer></script>
+        $insert = "INSERT INTO scores (nick, score) VALUES (".$nickname.", 1234)";
+        $conn->query($insert);
+    ?> -->
+    
+    <!-- nie ma zaczytania poziomu do bazy, tylko im wyzszy tym wyniki beda szly na podstawie x3 lub x2 -->
+
+    <script src="src/main.js" defer></script>
+    <script src="src/game.js" defer></script>
     <!-- <iframe name="frame"></iframe> -->
 </body>
 </html>

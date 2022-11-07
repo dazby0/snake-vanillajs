@@ -1,3 +1,7 @@
+<?php
+    require('config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,21 +20,19 @@
         </header>
         <div class="rank">
             <ol class="ranking">
-                <li>asdf</li>
-                <li>asfasgfasdg</li>
-                <li>sdaga</li>
-                <li>asfhgsf</li>
-                <li>sfhah</li>
-                <li>fsdgasfh</li>
-                <li>sfhsf</li>
-                <li>fhsdfh</li>
-                <li>asdf</li>
-                <li>asdga</li>
+                <?php
+                    $selectRanking = "SELECT nick FROM scores ORDER BY score DESC LIMIT 10";
+                    $result = $conn -> query($selectRanking);
+
+                    while($row = $result->fetch_assoc()) {
+                        echo "<li>".$row['nick']."</li>";
+                    }
+                ?>
             </ol>
         </div>
     </div>
 
-    <form action="">
+    <form action="" method='get'>
         <div class="nickname-screen">
             <h2 class="h2-title">Choose your nickname</h2>
             <input type="text" name="nickname" id="nickname" class="input-text" id="nickname">
@@ -39,6 +41,6 @@
     </form>
 
 
-    <script src="script.js" defer></script>
+    <script src="src/script.js" defer></script>
 </body>
 </html>
