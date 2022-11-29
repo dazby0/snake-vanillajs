@@ -19,10 +19,7 @@ const snakeColorScreen = document.querySelector(".snake-color");
 const screenLevel = document.querySelector(".level-screen");
 const mainContainer = document.querySelector(".main-container");
 const message = document.getElementById("choosen-level");
-const menuBtn = document.querySelector(".menu-container");
 const endGameScreen = document.querySelector(".endgame-screen");
-
-const score = document.querySelector(".score");
 
 const saveBtn = document.querySelector(".save-yes");
 const dontSaveBtn = document.querySelector(".save-no");
@@ -75,21 +72,9 @@ btnPicker.addEventListener("click", () => {
   // const colorPicked = pickerValue.value;
   // console.log(colorPicked)
   snakeColorScreen.style.display = "none";
-  disappear();
-});
-
-menuBtn.addEventListener("click", () => {
-  // nicknameScreen.style.display = 'flex';
-  screenLevel.style.display = "block";
-  menuBtn.style.display = "none";
-  mainContainer.style.opacity = 0.1;
-});
-
-function disappear() {
   screenLevel.style.display = "none";
-  menuBtn.style.display = "flex";
-  mainContainer.style.opacity = 1;
-}
+  mainContainer.style.opacity = "1";
+});
 
 // btnTryAgain.addEventListener('click', () => {
 //     endGameScreen.style.display = 'none'

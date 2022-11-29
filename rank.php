@@ -28,27 +28,27 @@
 
                     while($row = $result->fetch_assoc()) {
                         if($row['nick'] == $_SESSION['user']) {
-                            echo "<li class='active-nick'>".$row['nick']."</li><p class='ranking-score'>score: ".$row['score']."</p>";
+                            echo "<li onclick='changeNickname()' class='active-nick'>".$row['nick']."</li><p class='ranking-score'>score: ".$row['score']."</p>";
                         }
                         else echo "<li>".$row['nick']."</li><p class='ranking-score'>score: ".$row['score']."</p>";
                     }
                 ?>
             </ol>
         </div>
+        <div class="try-again">
+            <input type="button" class="button button-back" value="TRY AGAIN" />
+        </div>
     </div>
 
     <form action="update.php" method='post'>
         <div class="nickname-screen">
-            <h2 class="h2-title">Choose your nickname</h2>
+            <h2 class="h2-title">Change your nickname</h2>
             <input type="text" name="nickname" id="nickname" class="input-text" id="nickname">
             <input type="submit" value="UPDATE" class="button" id="button-nickname"></input>
         </div>
     </form>
 
 
-    <div class="try-again">
-        <input type="button" class="button button-back" value="TRY AGAIN" />
-    </div>
 
     <script src="src/script.js" defer></script>
 </body>

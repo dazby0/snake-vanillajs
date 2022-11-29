@@ -6,7 +6,7 @@ const levelInput = document.getElementById("level");
 
 let speed = 0;
 
-const scoreContainer = document.querySelector(".score");
+const scoreContainer = document.querySelectorAll(".score");
 // const endgameScoreContainer = document.querySelector(".endgame-score");
 
 const mainScreen = document.querySelector(".main-container");
@@ -33,7 +33,7 @@ lvlEasy.addEventListener("click", () => {
 
 lvlMedium.addEventListener("click", () => {
   speed = 6;
-  levelInput.valule = "medium";
+  levelInput.value = "medium";
   drawGame();
 });
 

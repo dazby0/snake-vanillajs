@@ -2,18 +2,23 @@ const nicknameScreen = document.querySelector(".nickname-screen");
 const btnNickname = document.getElementById("button-nickname");
 const mainContainer = document.querySelector(".main");
 
-const changeNickLabel = document.querySelector(".active-nick");
+const changeNickLabel = document.getElementById("active");
 
 const buttonBack = document.querySelector(".button-back");
 
 buttonBack.addEventListener("click", () => {
-  $url = window.location.href;
-  $defaultUrl = $url.slice(0, 23);
+  const url = window.location.href;
+  const index = "index.html";
+  const defaultUrl = url.split("/");
 
-  window.location.assign($defaultUrl + "index.html");
+  defaultUrl.pop();
+  defaultUrl.push(index);
+
+  const newUrl = defaultUrl.join("/");
+  window.location.assign(newUrl);
 });
 
-changeNickLabel.addEventListener("click", () => {
-  nicknameScreen.display = "flex";
-  mainContainer.opacity = "0.1";
-});
+function changeNickname() {
+  nicknameScreen.style.display = "flex";
+  mainContainer.style.opacity = 0.1;
+}
