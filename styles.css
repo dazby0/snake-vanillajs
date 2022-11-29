@@ -1,281 +1,302 @@
-@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap");
 
 :root {
-    --primaryColor: #232931;
-    --secondaryColor: #393e46;
-    --highlightColor: #4ecca3;
-    --lightColor: #eee;
-    --mainFont: 'AlmendraSC', serif;
+  --primaryColor: #232931;
+  --secondaryColor: #393e46;
+  --highlightColor: #4ecca3;
+  --lightColor: #eee;
+  --mainFont: "AlmendraSC", serif;
 }
 
 body {
-    background-color: var(--primaryColor);
+  background-color: var(--primaryColor);
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 0;
-    left: 0;
-    opacity: 0.1;
-    max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  max-height: 100vh;
 }
 
 .main-container .title {
-    font-size: 72px;
-    font-family: var(--mainFont);
-    color: var(--highlightColor);
-    margin: 48px;
+  font-size: 72px;
+  font-family: var(--mainFont);
+  color: var(--highlightColor);
+  margin: 48px;
 }
 
 .main-container .board {
-    display: grid;
-    grid-template-columns: repeat(15, auto);
-    grid-template-rows: repeat(15, auto);
-    border: 8px solid var(--lightColor);
-    height: 500px;
-    width: 500px;
+  display: grid;
+  grid-template-columns: repeat(15, auto);
+  grid-template-rows: repeat(15, auto);
+  border: 8px solid var(--lightColor);
+  height: 500px;
+  width: 500px;
 }
 
 .main-container .credits {
-    width: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 26px;
-    font-family: var(--mainFont);
-    text-transform: uppercase;
-    color: var(--lightColor);
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 26px;
+  font-family: var(--mainFont);
+  text-transform: uppercase;
+  color: var(--lightColor);
 }
 
-.main-container .score, .choosen-nickname {
-    color: var(--highlightColor);
-    font-size: 32px;
+.main-container .score,
+.choosen-nickname {
+  color: var(--highlightColor);
+  font-size: 32px;
 }
 
 .nickname-screen {
-    width: 800px;
-    position: absolute;
-    top: calc(50% - 196px);
-    left: calc(50% - 450px);
-    background-color: var(--secondaryColor);
-    padding: 48px;
-    border-radius: 12px;
-    overflow: hidden;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 800px;
+  position: absolute;
+  top: calc(50% - 196px);
+  left: calc(50% - 450px);
+  background-color: var(--secondaryColor);
+  padding: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .nickname-screen .h2-title {
-    font-size: 54px;
+  font-size: 54px;
 }
 
 .nickname-screen .input-text {
-    background-color: var(--secondaryColor);
-    color: var(--lightColor);
-    outline: none;
-    overflow: hidden;
-    border: none;
-    border-bottom: 2px var(--highlightColor) solid;
-    font-size: 32px;
+  background-color: var(--secondaryColor);
+  color: var(--lightColor);
+  outline: none;
+  overflow: hidden;
+  border: none;
+  border-bottom: 2px var(--highlightColor) solid;
+  font-size: 32px;
 }
 
 .nickname-screen .button {
-    margin-top: 22px;
-    padding: 12px;
-    width: 250px;
+  margin-top: 22px;
+  padding: 12px;
+  width: 250px;
 }
 
 .snake-color {
-    width: 800px;
-    position: absolute;
-    top: calc(50% - 196px);
-    left: calc(50% - 450px);
-    background-color: var(--secondaryColor);
-    padding: 48px;
-    border-radius: 12px;
-    overflow: hidden;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 800px;
+  position: absolute;
+  top: calc(50% - 196px);
+  left: calc(50% - 450px);
+  background-color: var(--secondaryColor);
+  padding: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .snake-color .h2-title {
-    font-size: 44px;
+  font-size: 44px;
 }
 
 .snake-color .button {
-    margin-top: 22px;
+  margin-top: 22px;
 }
 
 .level-screen {
-    width: 800px;
-    position: absolute;
-    top: calc(50% - 196px);
-    left: calc(50% - 450px);
-    background-color: var(--secondaryColor);
-    padding: 48px;
-    border-radius: 12px;
-    display: block;
+  width: 800px;
+  position: absolute;
+  top: calc(50% - 196px);
+  left: calc(50% - 450px);
+  background-color: var(--secondaryColor);
+  padding: 48px;
+  border-radius: 12px;
+  display: block;
 }
 
 .h2-title {
-    font-size: 72px;
-    font-family: var(--mainFont);
-    text-transform: uppercase;
-    color: var(--lightColor);
-    text-align: center;
-    padding: 12px;
+  font-size: 72px;
+  font-family: var(--mainFont);
+  text-transform: uppercase;
+  color: var(--lightColor);
+  text-align: center;
+  padding: 12px;
 }
 
 .choose-level {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly; 
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.button{
-    color: var(--highlightColor);
-    text-transform: uppercase;
-    background: var(--primaryColor);
-    padding: 20px;
-    border: 2px solid var(--highlightColor);
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s ease 0s;
-    font-size: 24px;
-    width: 220px;
+.button {
+  color: var(--highlightColor);
+  text-transform: uppercase;
+  background: var(--primaryColor);
+  padding: 20px;
+  border: 2px solid var(--highlightColor);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  font-size: 24px;
+  width: 220px;
 }
 
 .button:hover {
-    color: var(--lightColor);
-    border-radius: 50px;
-    border-color: var(--primaryColor);
-    transition: all 0.6s ease 0s;
-    cursor: pointer;
+  color: var(--lightColor);
+  border-radius: 50px;
+  border-color: var(--primaryColor);
+  transition: all 0.6s ease 0s;
+  cursor: pointer;
 }
 
 .menu-container {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  display: none;
 }
 
 .menu-container .button {
-    width: 150px;
-    font-size: 18px;
-    padding: 12px;
+  width: 150px;
+  font-size: 18px;
+  padding: 12px;
 }
 
 .endgame-screen {
-    width: 800px;
-    position: fixed;
-    top: calc(50% - 310px);
-    left: calc(50% - 450px);
-    background-color: var(--secondaryColor);
-    padding: 48px;
-    border-radius: 12px;
-    overflow: hidden;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 800px;
+  position: fixed;
+  top: calc(50% - 310px);
+  left: calc(50% - 450px);
+  background-color: var(--secondaryColor);
+  padding: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .endgame-screen .h2-title {
-    font-size: 62px;
-    color: var(--highlightColor);
-    /* margin-bottom: 12px; */
+  font-size: 62px;
+  color: var(--highlightColor);
+  /* margin-bottom: 12px; */
 }
 
 .your-score {
-    font-size: 38px;
-    color: var(--lightColor);
-    text-transform: uppercase;
+  font-size: 38px;
+  color: var(--lightColor);
+  text-transform: uppercase;
 }
 
 .your-score .highlight {
-    color: var(--highlightColor);
+  color: var(--highlightColor);
 }
 
 .save-score {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .save-score-title {
-    font-size: 36px;
-    color: var(--lightColor);
-    text-transform: uppercase;
+  font-size: 36px;
+  color: var(--lightColor);
+  text-transform: uppercase;
 }
 
 .save-score-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .save-score-buttons .button {
-    width: 140px;
+  width: 140px;
 }
 
+.your-score input {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+  background: inherit;
+  text-decoration: none;
+  border: none;
+  max-width: 15%;
+  margin-left: 8px;
+}
 
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 header h1 {
-    font-size: 72px;
-    font-style: var(--mainFont);
-    text-transform: uppercase;
-    color: var(--highlightColor);
+  font-size: 72px;
+  font-style: var(--mainFont);
+  text-transform: uppercase;
+  color: var(--highlightColor);
 }
 
 .rank {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .ranking {
-    width: 600px;
-    font-size: 22px;
-    color: var(--lightColor);
-    background-color: var(--secondaryColor);
-    border-radius: 12px;
+  width: 600px;
+  font-size: 22px;
+  color: var(--lightColor);
+  background-color: var(--secondaryColor);
+  border-radius: 12px;
 }
 
 .ranking li {
-    padding: 4px;
-    margin: 8px;
+  padding: 4px;
+  margin: 8px;
 }
 
 .ranking li:hover {
-    color: var(--highlightColor);
+  color: var(--highlightColor);
 }
 
 .active-nick {
-    background-image: url('icons/edit.png');
-    background-repeat: no-repeat;
-    background-position: right;
+  background-image: url("icons/edit.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-bottom: 1px;
 }
 
 .active-nick:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-iframe {
-    display: none;
+.ranking-score {
+  color: var(--highlightColor);
+  margin-top: 1px;
+}
+
+.try-again .button {
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  font-size: 20px;
 }

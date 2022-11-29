@@ -1,5 +1,7 @@
 <?php
     require('config.php');
+    session_start();
+    $currentLevel = $_SESSION['level'];
 ?>
 
 <!DOCTYPE html>
@@ -16,23 +18,26 @@
 <body>
     <div class="main">
         <header>
-            <h1>Ranking</h1>
+            <h1>Ranking level <?php echo $currentLevel; ?></h1>
         </header>
         <div class="rank">
             <ol class="ranking">
                 <?php
-                    $selectRanking = "SELECT nick FROM scores ORDER BY score DESC LIMIT 10";
+                    $selectRanking = "SELECT nick, score FROM scores WHERE level='$currentLevel' ORDER BY score DESC LIMIT 5";
                     $result = $conn -> query($selectRanking);
 
                     while($row = $result->fetch_assoc()) {
-                        echo "<li>".$row['nick']."</li>";
+                        if($row['nick'] == $_SESSION['user']) {
+                            echo "<li class='active-nick'>".$row['nick']."</li><p class='ranking-score'>score: ".$row['score']."</p>";
+                        }
+                        else echo "<li>".$row['nick']."</li><p class='ranking-score'>score: ".$row['score']."</p>";
                     }
                 ?>
             </ol>
         </div>
     </div>
 
-    <form action="" method='get'>
+    <form action="update.php" method='post'>
         <div class="nickname-screen">
             <h2 class="h2-title">Choose your nickname</h2>
             <input type="text" name="nickname" id="nickname" class="input-text" id="nickname">
@@ -40,6 +45,10 @@
         </div>
     </form>
 
+
+    <div class="try-again">
+        <input type="button" class="button button-back" value="TRY AGAIN" />
+    </div>
 
     <script src="src/script.js" defer></script>
 </body>

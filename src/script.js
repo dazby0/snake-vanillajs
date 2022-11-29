@@ -1,48 +1,19 @@
-const url = document.URL
-const nickname = url.slice(url.indexOf("=")+1) 
-// console.log(nickname)
+const nicknameScreen = document.querySelector(".nickname-screen");
+const btnNickname = document.getElementById("button-nickname");
+const mainContainer = document.querySelector(".main");
 
-const rankNicknamesArr = [];
-const rankNicknames = document.querySelectorAll('li')
-// console.log(rankNicknames)
+const changeNickLabel = document.querySelector(".active-nick");
 
-const nicknameScreen = document.querySelector('.nickname-screen');
-const nicknameInput = document.getElementById('nickname');
-const btnNickname = document.getElementById('button-nickname');
-const mainContainer = document.querySelector('.main')
+const buttonBack = document.querySelector(".button-back");
 
-rankNicknames.forEach(rankNickname => {
-    rankNicknamesArr.push(rankNickname.innerHTML)
+changeNickLabel.addEventListener("click", () => {
+  nicknameScreen.display = "flex";
+  mainContainer.opacity = "0.1";
 });
-// console.log(rankNicknamesArr)
 
+buttonBack.addEventListener("click", () => {
+  $url = window.location.href;
+  $defaultUrl = $url.slice(0, 23);
 
-function matchItem(nickname) {
-    const isMatched = rankNicknamesArr.findIndex(el => el === nickname)
-    // console.log(isMatched)
-
-    if(isMatched !== -1) {
-        const matchedItem = rankNicknames[isMatched]
-        // console.log(matchedItem)
-        matchedItem.className = 'active-nick'
-    }
-}
-matchItem(nickname)
-
-
-const matchedItem = document.querySelector('.active-nick')
-matchedItem.addEventListener('click', () => {
-    nicknameScreen.style.display = 'flex'
-    mainContainer.style.opacity = 0.1
-})
-
-btnNickname.addEventListener('click', () => {
-    const updatedNickname = nicknameInput.value;
-    
-    if (updatedNickname !== '') {
-        nicknameScreen.style.display = 'none';
-        // nicknameField.innerHTML = nickname;
-
-        //DODAC UPDATE NICKU
-    }
-})
+  window.location.assign($defaultUrl + "index.html");
+});
